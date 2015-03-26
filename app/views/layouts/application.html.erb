@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>LamentRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8">
+  <title>Lamenting Robot</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700" media="screen" rel="stylesheet" type="text/css">
+  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'robot_avatar_small.png' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <div class="one-third column">
+        <nav>
+          <header>
+            <h1>Lamenting Robot</h1>
+            <time>by Indro De</time>
+          </header>
+          <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
+          <p><a href="#">&lt; previous</a> | <a href="#">next &gt;</a></p>
+        </nav>
+        &nbsp;
+      </div>
+      <div class="two-thirds column">
+        <%= yield %>
+        <footer>
+          <p>Lamenting Robot &copy; 2015 by Indro De. No humans were knowingly harmed in the rendering of this website.</p>
+          <p>&nbsp;</p>
+          <p>{ this space intentionally left blank }</p>
+        </footer>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
