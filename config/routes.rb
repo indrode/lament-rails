@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
+  resources :articles
   root 'home#index'
-
-  namespace :admin do
-    resources :articles
-  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

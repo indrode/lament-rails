@@ -1,0 +1,26 @@
+<%= simple_form_for(@article, html: { multipart: true }) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :enabled  %>
+    <div class="row">
+      <div class="six columns">
+        <%= f.input :number, input_html: { class: 'u-full-width' } %>
+      </div>
+
+      <div class="six columns">
+        <%= f.input :category, input_html: { class: 'u-full-width' } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <%= f.input :title, input_html: { class: 'u-full-width' } %>
+        <%= f.input :blurb, input_html: { class: 'u-full-width' } %>
+        <%= f.input :filename, as: :file %>
+        <%= f.input :posted_at %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>
