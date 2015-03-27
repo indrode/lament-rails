@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'kotae', '0.2.8', git: 'spacecake-git:/home/git/kotae.git', ref: 'lament'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 

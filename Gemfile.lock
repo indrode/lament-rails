@@ -1,3 +1,11 @@
+GIT
+  remote: spacecake-git:/home/git/kotae.git
+  revision: 023d50affbe80ba6b82f5aa1202cd636dd1dd457
+  ref: lament
+  specs:
+    kotae (0.2.8)
+      dotenv (~> 0.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,6 +59,7 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    dotenv (0.8.0)
     erubis (2.7.0)
     execjs (2.4.0)
     globalid (0.3.3)
@@ -156,6 +165,7 @@ DEPENDENCIES
   byebug
   capybara
   jbuilder (~> 2.0)
+  kotae (= 0.2.8)!
   pg
   quiet_assets
   rails (= 4.2.1)
