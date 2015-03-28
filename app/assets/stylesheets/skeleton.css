@@ -147,6 +147,15 @@ img {
 }
 
 
+/* Notices and Validation Messages
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#notice {
+  border: 1px solid #ccc;
+  display: block;
+  padding: 10px;
+}
+
 /* Special Sections and Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
