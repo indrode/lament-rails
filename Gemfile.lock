@@ -112,6 +112,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    redcarpet (3.2.2)
     rspec-core (3.2.2)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.0)
@@ -172,6 +173,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 4.2.1)
+  redcarpet
   rspec-rails (~> 3.0)
   sdoc (~> 0.4.0)
   simple_form

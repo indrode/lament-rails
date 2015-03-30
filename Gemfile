@@ -39,6 +39,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'simple_form'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'quiet_assets'
