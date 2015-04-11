@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @article = Article.ordered.first
+    @article = Article.enabled.ordered.first
   end
 end

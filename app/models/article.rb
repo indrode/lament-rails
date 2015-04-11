@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
   scope :ordered, -> { order('number DESC') }
+  scope :enabled, -> { where(enabled: true) }
 
   validates :number, :title, :blurb, :filename, :category, :posted_at, presence: true
   validates :blurb, length: { maximum: 255 }
