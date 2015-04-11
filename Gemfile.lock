@@ -1,6 +1,6 @@
 GIT
   remote: spacecake-git:/home/git/kotae.git
-  revision: 023d50affbe80ba6b82f5aa1202cd636dd1dd457
+  revision: 81e0947881ed9e420c0970ca74a52b1b69d23be1
   ref: lament
   specs:
     kotae (0.2.8)
