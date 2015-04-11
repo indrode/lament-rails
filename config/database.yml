@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['LAMENT-RAILS_DATABASE']
-  username: <%= ENV['LAMENT-RAILS_DATABASE_USERNAME']
-  password: <%= ENV['LAMENT-RAILS_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
