@@ -2,7 +2,6 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
-require 'mina/puma'
 
 set :domain, 'tetsuo'
 set :deploy_to, '/home/akira/lament-rails'
@@ -44,8 +43,9 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     to :launch do
-      queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
-      queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      # This kills the current Puma process, then restarts it
+      queue "kill $(cat #{deploy_to}/#{shared_path}/tmp/pids/puma.pid)"
+      queue "cd #{deploy_to}/#{current_path} && bundle exec puma -C config/puma.rb"
     end
   end
 end
