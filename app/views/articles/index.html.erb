@@ -17,7 +17,6 @@
       <th>Title</th>
       <th>Category</th>
       <th>Posted at</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -26,10 +25,9 @@
       <tr>
         <td><%= article.enabled %></td>
         <td><%= article.number %></td>
-        <td><%= article.title %></td>
+        <td><%= link_to article.title, edit_article_path(article) %></td>
         <td><%= article.category %></td>
         <td><%= article.posted_at.strftime("%b %d, %Y") %></td>
-        <td><%= link_to 'edit', edit_article_path(article) %></td>
       </tr>
     <% end %>
   </tbody>
