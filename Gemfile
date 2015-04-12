@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem 'puma'
+gem 'mina-puma', :require => false
 gem 'simple_form'
 gem 'redcarpet'
 
