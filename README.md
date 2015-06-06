@@ -2,7 +2,11 @@
 
 [![Code Climate](https://codeclimate.com/github/indrode/lament-rails/badges/gpa.svg)](https://codeclimate.com/github/indrode/lament-rails)
 
-# License
+## Deployment
+
+    mina deploy
+
+## License
 
 The MIT License (MIT)
 
