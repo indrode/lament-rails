@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :articles
   root 'home#index'
+  get ':id' => 'home#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
