@@ -1,3 +1,4 @@
+<% if @article %>
 <article>
 <header>
   <h2><%= @article.title %></h2>
@@ -5,3 +6,6 @@
 </header>
 <%= @article.copy_copy %>
 </article>
+<% else %>
+  <p>Your requested page was not found!<p>
+<% end %>

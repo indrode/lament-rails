@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :articles
   root 'home#index'
-  get ':number' => 'home#show'
+  get ':number' => 'home#show', as: :blog
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
