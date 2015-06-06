@@ -273,6 +273,12 @@ mark {
   background-color: #FFF5A5;
 }
 
+em {
+  padding: 2px;
+  background-color: #FFF5A5;
+  font-style: normal;
+}
+
 
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
