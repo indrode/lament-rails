@@ -22,7 +22,9 @@
             <time>by Indro De</time>
           </header>
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
-          <p><small><%= link_to('view previous article', blog_path(number: @article.previous)) %></small></p>
+          <% unless @admin %>
+            <p><small><%= link_to('view previous article', blog_path(number: @article.previous)) %></small></p>
+          <% end %>
         </nav>
         &nbsp;
       </div>
