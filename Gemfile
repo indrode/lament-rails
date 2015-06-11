@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'kotae', '0.2.8', git: 'spacecake-git:/home/git/kotae.git', ref: 'lament'
-gem 'rails', '4.2.1'
+gem 'rails', github: 'rails/rails'
+gem 'arel', github: 'rails/arel'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
