@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with name: ENV['HTTP_AUTH_USER'], password: ENV['HTTP_AUTH_PW']
   before_filter :set_article, only: [:edit, :update, :destroy]
-  before_filter :set_admin_mode
 
   def index
     @articles = Article.ordered.all
@@ -32,10 +31,6 @@ class ArticlesController < ApplicationController
   end
 
   private
-
-  def set_admin_mode
-    @admin = true
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_article
