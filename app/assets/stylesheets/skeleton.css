@@ -259,11 +259,12 @@ p { margin-top: 0; }
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB;
+  color: #91330D;
   text-decoration: none;
+  font-weight: bold;
 }
 a:hover {
-  color: #0FA0CE; }
+  color: #DF4F14; }
 
 h1 a {
   color: #555;
