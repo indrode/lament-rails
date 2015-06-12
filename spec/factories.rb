@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :category do
+    title "category"
+    articles_count 1
+  end
+
   factory :article do
     sequence(:number) { |n| n }
     title 'Article Title'

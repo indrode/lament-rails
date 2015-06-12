@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  belongs_to :category
+
   scope :ordered, -> { order('number DESC') }
   scope :enabled, -> { where(enabled: true) }
 
