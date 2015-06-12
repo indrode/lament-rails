@@ -1,0 +1,18 @@
+- set up acceptance tests with factory-girl and capybara
+- database migrations
+- create index page (and use it as homepage?)
+- create category pages
+- think about website navigation
+
+
+- add category model
+- homepage should be index of all categories and related articles
+- there is not category scaffold (categories are created via a rake command or the console)
+- keep number of categories low, i.e. 4-5 max
+- categories:
+--- personal: anything, including projects
+--- devops: git, application servers, 
+--- linux: sysadmin stuff, server setup and maintenance; (maybe merge this with devops)
+--- productivity: setting up the mac, recommended software, productivity hacks
+--- code: anything code-related
+

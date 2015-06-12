@@ -123,10 +123,6 @@ html {
 
 body {
   background-color: #f0f1ec;
-/*
-  background-image: url(<%= asset_path 'skulls.png' %>);
-  background-attachment: fixed;
-*/
   font-family: "Oxygen", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2em;
   line-height: 1.6;
@@ -134,13 +130,14 @@ body {
   color: #000;
 }
 
-#fixedbg{
+#fixed-background{
+  background-color: #f0f1ec;
   background: url(<%= asset_path 'skulls.png' %>); no-repeat left top;
-  height: 100%;
   position: fixed;
+  top: 0;
+  height: 100%;
   width: 100%;
   z-index: -1;
-  top: 0;
 }
 
 
