@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  belongs_to :category
+  belongs_to :category, counter_cache: true
 
   scope :ordered, -> { order('number DESC') }
   scope :enabled, -> { where(enabled: true) }
