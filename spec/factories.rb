@@ -1,0 +1,14 @@
+FactoryGirl.define do
+  factory :article do
+    sequence(:number) { |n| n }
+    title 'Article Title'
+    blurb 'This is a test article blurb.'
+    filename 'filename.md'
+    category 'test'
+    copy 'This is the main article copy.'
+    sequence(:posted_at) { |n| (100-n).days.ago }
+    sequence(:created_at) { |n| (100-n).days.ago }
+    sequence(:updated_at) { |n| (100-n).days.ago }
+    enabled true
+  end
+end
