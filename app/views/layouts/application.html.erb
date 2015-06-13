@@ -20,11 +20,13 @@
         <nav>
           <header>
             <h1><%= link_to 'Lamenting Robot', root_path %></h1>
-            <time>by Indro De</time>
+            <p>by Indro De</p>
           </header>
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
           <% if @article %>
-            <p><small><%= link_to('view previous article', blog_path(number: @article.previous)) %></small></p>
+            <p><small><%= link_to('view all articles', blog_path(number: @article.previous)) %></small></p>
+          <% else %>
+            <p><small><%= link_to('view most recent article', blog_path(number: @latest.number)) %></small></p>
           <% end %>
         </nav>
         &nbsp;
