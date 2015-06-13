@@ -15,10 +15,11 @@ RSpec.describe HomeController, type: :feature do
     end
 
     it 'should render an article page' do
-      create(:article, number: 1)
+      create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
       visit blog_path(1)
       expect(page).to have_content 'Article Title'
       expect(page).to have_content 'This is the main article copy.'
+      expect(page).to have_content '2015-04-20'
     end
   end
 end

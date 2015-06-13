@@ -2,7 +2,7 @@
 <article>
 <header>
   <h2><%= @article.title %></h2>
-  <p>Posted <time><%= @article.posted_at %></time></p>
+  <p>Posted <time><%= @article.posted_at.strftime("%Y-%m-%d") %></time></p>
 </header>
 <%= @article.copy_copy %>
 </article>
