@@ -19,7 +19,11 @@
       <div class="one-third column">
         <nav>
           <header>
-            <h1><%= link_to 'Lamenting Robot', root_path %></h1>
+            <h1>
+              <%= link_to root_path do %>
+              Lamenting<br />Robot
+              <% end %>
+            </h1>
             <p>by Indro De</p>
           </header>
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
