@@ -8,6 +8,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'simple_form'
 gem 'redcarpet'
 gem 'puma'
+gem 'yui-compressor'
 
 group :development do
   gem 'mina'
