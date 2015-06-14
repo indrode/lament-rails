@@ -24,9 +24,7 @@
           </header>
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
           <% if @article %>
-            <p><small><%= link_to('view all articles', blog_path(number: @article.previous)) %></small></p>
-          <% else %>
-            <p><small><%= link_to('view most recent article', blog_path(number: @latest.number)) %></small></p>
+            <p><small><%= link_to('view previous article', blog_path(number: @article.previous)) %></small></p>
           <% end %>
         </nav>
         &nbsp;
