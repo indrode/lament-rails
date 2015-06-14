@@ -132,22 +132,12 @@ html {
 body {
   background-color: #f0f1ec;
   font-family: "Oxygen", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: url(<%= asset_path 'skulls.png' %>) fixed;
   font-size: 1.2em;
   line-height: 1.6;
   font-weight: 400;
   color: #000;
 }
-
-#fixed-background{
-  background-color: #f0f1ec;
-  background: url(<%= asset_path 'skulls.png' %>); no-repeat left top;
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-}
-
 
 /* Images
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
