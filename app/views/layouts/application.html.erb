@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="http://fonts.googleapis.com/css?family=Oxygen:300,400,700" media="screen" rel="stylesheet" type="text/css">
-  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'robot_avatar_small.png' %>
   <%= csrf_meta_tags %>
 </head>
@@ -28,7 +28,7 @@
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
           <% if @article %>
             <p><small><%= link_to('view all articles', blog_path(number: @article.previous)) %></small></p>
-          <% elsif @latest %>
+          <% else %>
             <p><small><%= link_to('view most recent article', blog_path(number: @latest.number)) %></small></p>
           <% end %>
         </nav>

@@ -9,6 +9,7 @@ gem 'simple_form'
 gem 'redcarpet'
 gem 'puma'
 gem 'cssminify'
+gem 'turbolinks'
 
 group :development do
   gem 'mina'
@@ -29,5 +30,4 @@ end
 # gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 # gem 'jquery-rails'
-# gem 'turbolinks'
 # gem 'bcrypt', '~> 3.1.7'
