@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  caches_page :index, :show
+
   def index
     @article = Article.enabled.ordered.first
   end
