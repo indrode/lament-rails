@@ -28,7 +28,7 @@
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
           <% if @article %>
             <p><small><%= link_to('view all articles', blog_path(number: @article.previous)) %></small></p>
-          <% else %>
+          <% elsif @latest %>
             <p><small><%= link_to('view most recent article', blog_path(number: @latest.number)) %></small></p>
           <% end %>
         </nav>
