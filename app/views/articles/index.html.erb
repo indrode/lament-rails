@@ -23,10 +23,10 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.enabled %></td>
+        <td><%= article.enabled ? 'yes' : 'no' %></td>
         <td><%= article.number %></td>
         <td><%= link_to article.title, edit_article_path(article) %></td>
-        <td><%= article.category %></td>
+        <td><%= article.category.title %></td>
         <td><%= article.posted_at.strftime("%b %d, %Y") %></td>
       </tr>
     <% end %>
