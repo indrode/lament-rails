@@ -11,6 +11,7 @@ gem 'redcarpet'
 gem 'puma'
 gem 'cssminify'
 gem 'turbolinks'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'mina'
