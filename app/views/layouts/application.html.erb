@@ -24,9 +24,7 @@
             <p>by Indro De</p>
           </header>
           <p>A collection of opinionated guides and articles of varying topics from a developer's perspective.</p>
-          <% if @article %>
-            <p><small><%= link_to('view previous article', blog_path(number: @article.previous)) %></small></p>
-          <% end %>
+          <%= yield :navigation %>
         </nav>
         &nbsp;
       </div>

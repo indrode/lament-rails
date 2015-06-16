@@ -1,3 +1,8 @@
+<% content_for :navigation do %>
+  <%= link_to 'Add a new article', new_article_path, class: 'button' %>
+  <%= link_to 'Back to homepage', root_path, class: 'button' %>
+<% end %>
+
 <header>
   <h2>Admin Interface</h2>
 </header>
@@ -5,9 +10,6 @@
 <% if notice %>
   <p id="notice"><%= notice %></p>
 <% end %>
-
-<%= link_to 'Add a new article', new_article_path, class: 'button' %>
-<%= link_to 'Back to homepage', root_path, class: 'button' %>
 
 <table>
   <thead>

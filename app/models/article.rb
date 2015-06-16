@@ -8,8 +8,18 @@ class Article < ActiveRecord::Base
   validates :blurb, length: { maximum: 255 }
   validates :number, numericality: true, uniqueness: true
 
-  def previous
-    (number > 1) ? (number - 1) : 1
+  class << self
+    def previous(article)
+      enabled_articles[enabled_articles.index(article) - 1]
+    end
+
+    def enabled_articles
+      enabled.ordered.reverse.each.to_a
+    end
+  end
+
+  def to_param
+    "#{number}-#{title.parameterize}"
   end
 
   def copy_copy # TODO: rename to copy and database field copy -> markdown
