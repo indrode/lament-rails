@@ -4,7 +4,7 @@
 # overhead.  For more information, visit www.newrelic.com.
 #
 # Generated June 16, 2015
-#
+# 
 # This configuration file is custom generated for zenpunch
 #
 # For full documentation of agent configuration options, please refer to
@@ -19,7 +19,7 @@ common: &default_settings
   app_name: Lamenting Robot
 
   # To disable the agent regardless of other settings, uncomment the following:
-  agent_enabled: false
+  # agent_enabled: false
 
   # Logging level for log/newrelic_agent.log
   log_level: info
