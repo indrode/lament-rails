@@ -1,14 +1,14 @@
 <%= simple_form_for(@article, html: { multipart: true }) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-    <%= f.input :enabled  %>
+    <%= f.input :enabled, as: :select  %>
     <div class="row">
       <div class="six columns">
         <%= f.input :number, input_html: { class: 'u-full-width' } %>
       </div>
 
       <div class="six columns">
-        <%= f.input :category, input_html: { class: 'u-full-width' } %>
+        <%= f.association :category, input_html: { class: 'u-full-width' } %>
       </div>
     </div>
     <div class="row">
