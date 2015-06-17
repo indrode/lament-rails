@@ -9,6 +9,10 @@ class Article < ActiveRecord::Base
   validates :number, numericality: true, uniqueness: true
 
   class << self
+    def latest
+      enabled.ordered.first
+    end
+
     def previous(article)
       enabled_articles[enabled_articles.index(article) - 1]
     end
