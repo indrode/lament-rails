@@ -10,7 +10,7 @@
 </header>
 
 <% @categories.each do |category| %>
-  <h3><%= category.title %></h3>
+  <h3><%= category.title.capitalize %> <small>(<%= pluralize(category.articles_count, 'file') %>)</small></h3>
   <% category.articles.each do |article| %>
     <p>
       <small>[<%= article.posted_at.strftime("%Y-%m-%d") %>]</small> <%= link_to article.title, blog_path(article) %><br />
