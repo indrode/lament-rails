@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with name: ENV['HTTP_AUTH_USER'], password: ENV['HTTP_AUTH_PW']
   before_filter :set_article, only: [:edit, :update, :destroy]
+  after_filter :invalidate_cache, only: [:create, :update]
 
   def index
     @articles = Article.ordered.all
@@ -40,5 +41,9 @@ class ArticlesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def article_params
     params.require(:article).permit(:enabled, :number, :title, :blurb, :category, :copy, :posted_at)
+  end
+
+  def invalidate_cache
+    expire_page controller: :home, action: 'show', number: @article.id
   end
 end
