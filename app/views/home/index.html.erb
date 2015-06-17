@@ -1,7 +1,5 @@
 <% content_for :navigation do %>
-  <% if @article %>
-    <p><small><%= link_to('&larr; previous article'.html_safe, blog_path(Article.latest)) %></small></p>
-  <% end %>
+  <p><small><%= link_to('&larr; previous article'.html_safe, blog_path(Article.latest)) %></small></p>
 <% end %>
 
 <header>

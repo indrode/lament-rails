@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe HomeController, type: :feature do
   describe 'Homepage' do
     it 'should display correctly' do
+      create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
       visit root_path
       expect(page).to have_content 'Lamenting Robot'
     end
