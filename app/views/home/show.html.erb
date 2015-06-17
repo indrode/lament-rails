@@ -1,6 +1,6 @@
 <% content_for :navigation do %>
   <% if @article %>
-    <p><small><%= link_to('view previous article', blog_path(Article.previous(@article))) %></small></p>
+    <p><small><%= link_to('&larr; previous article'.html_safe, blog_path(Article.previous(@article))) %></small> | <small><%= link_to('view all', root_path) %></small></p>
   <% end %>
 <% end %>
 

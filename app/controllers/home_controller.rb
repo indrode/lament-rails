@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   caches_page :index, :show
 
   def index
-    @article = Article.enabled.ordered.first
+    @categories = Category.includes(:articles).all
   end
 
   def show

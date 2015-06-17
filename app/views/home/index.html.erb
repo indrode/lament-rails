@@ -1,17 +1,21 @@
 <% content_for :navigation do %>
   <% if @article %>
-    <p><small><%= link_to('view previous article', blog_path(Article.previous(@article))) %></small></p>
+    <p><small><%= link_to('&larr; previous article'.html_safe, blog_path(Article.latest)) %></small></p>
   <% end %>
 <% end %>
 
-<% if @article %>
-<article>
 <header>
-  <h2><%= @article.title %></h2>
-  <p>Posted <time><%= @article.posted_at.strftime("%Y-%m-%d") %></time></p>
+  <h2>Data Files</h2>
+  <p>All the articles in one neat place.</p>
 </header>
-<%= @article.copy_copy %>
-</article>
-<% else %>
-  <p>Your requested page was not found!<p>
+
+<% @categories.each do |category| %>
+  <h3><%= category.title %></h3>
+  <% category.articles.each do |article| %>
+    <p>
+      <small>[<%= article.posted_at.strftime("%Y-%m-%d") %>]</small> <%= link_to article.title, blog_path(article) %><br />
+      <small><%= article.blurb.html_safe %></small>
+
+    </p>
+  <% end %>
 <% end %>
