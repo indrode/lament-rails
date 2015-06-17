@@ -2,18 +2,24 @@
   <p><small><%= link_to('&larr; start browsing'.html_safe, blog_path(Article.latest)) %></small></p>
 <% end %>
 
-<header>
-  <h2>Data Files</h2>
-  <p>All the articles in one neat place.</p>
-</header>
-
+<table class="u-full-width">
 <% @categories.each do |category| %>
-  <h3><%= category.title.capitalize %> <small>(<%= pluralize(category.articles_count, 'file') %>)</small></h3>
+  <thead>
+    <tr>
+      <th><%= category.title.capitalize %></th>
+      <th><%= category.description %></th>
+    </tr>
+  </thead>
+  <tbody>
   <% category.articles.each do |article| %>
-    <p>
-      <small>[<%= article.posted_at.strftime("%Y-%m-%d") %>]</small> <%= link_to article.title, blog_path(article) %><br />
-      <small><%= article.blurb.html_safe %></small>
-
-    </p>
+    <tr>
+      <td><%= article.posted_at.strftime("%Y-%m-%d") %></td>
+      <td><%= link_to article.title, blog_path(article) %><br /><%= article.blurb.html_safe %></td>
+    </tr>
   <% end %>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  </tbody>
 <% end %>
+</table>
