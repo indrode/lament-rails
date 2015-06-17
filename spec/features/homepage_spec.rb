@@ -6,6 +6,7 @@ RSpec.describe HomeController, type: :feature do
       create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
       visit root_path
       expect(page).to have_content 'Lamenting Robot'
+      expect(page).to have_content 'start browsing'
     end
   end
 
