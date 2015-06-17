@@ -44,6 +44,7 @@ class ArticlesController < ApplicationController
   end
 
   def invalidate_cache
+    expire_page controller: :home, action: 'index'
     expire_page controller: :home, action: 'show', number: @article.id
   end
 end
