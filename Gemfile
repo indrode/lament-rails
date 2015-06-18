@@ -28,6 +28,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'brakeman', require: false
+  gem "codeclimate-test-reporter", require: false
 end
 
 # gem 'sdoc', '~> 0.4.0', group: :doc
