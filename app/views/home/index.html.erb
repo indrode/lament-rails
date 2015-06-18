@@ -3,23 +3,7 @@
 <% end %>
 
 <table class="u-full-width">
-<% @categories.each do |category| %>
-  <thead>
-    <tr>
-      <th><%= category.title.capitalize %></th>
-      <th><%= category.description %></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% category.articles.each do |article| %>
-    <tr>
-      <td><%= article.posted_at.strftime("%Y-%m-%d") %></td>
-      <td><%= link_to article.title, blog_path(article) %><br /><%= article.blurb.html_safe %></td>
-    </tr>
+  <% @categories.each do |category| %>
+    <%= render partial: 'partials/category', locals: { category: category } %>
   <% end %>
-  <tr>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  </tbody>
-<% end %>
 </table>
