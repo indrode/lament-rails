@@ -49,6 +49,16 @@ GEM
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    brakeman (3.0.2)
+      erubis (~> 2.6)
+      fastercsv (~> 1.5)
+      haml (>= 3.0, < 5.0)
+      highline (~> 1.6.20)
+      multi_json (~> 1.2)
+      ruby2ruby (~> 2.1.1)
+      ruby_parser (~> 3.6.2)
+      sass (~> 3.0)
+      terminal-table (~> 1.4)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -78,8 +88,12 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    fastercsv (1.5.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    haml (4.0.6)
+      tilt
+    highline (1.6.21)
     i18n (0.7.0)
     jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
@@ -155,6 +169,13 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    ruby2ruby (2.1.4)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.0)
+    ruby_parser (3.6.6)
+      sexp_processor (~> 4.1)
+    sass (3.4.13)
+    sexp_processor (4.5.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -165,8 +186,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    terminal-table (1.4.5)
     thor (0.19.1)
     thread_safe (0.3.5)
+    tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -187,6 +210,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack-page_caching
+  brakeman
   byebug
   capybara
   cssminify
