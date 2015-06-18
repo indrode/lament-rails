@@ -5,7 +5,7 @@
   </tr>
 </thead>
 <tbody>
-<% category.articles.each do |article| %>
+<% category.articles.enabled.each do |article| %>
   <tr>
     <td><%= article.posted_at.strftime("%Y-%m-%d") %></td>
     <td><%= link_to article.title, blog_path(article) %><br /><%= article.blurb.html_safe %></td>

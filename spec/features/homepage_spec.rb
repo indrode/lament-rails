@@ -3,10 +3,24 @@ require 'rails_helper'
 RSpec.describe HomeController, type: :feature do
   describe 'Homepage' do
     it 'should display correctly' do
-      create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
+      create(:article, number: 1)
       visit root_path
       expect(page).to have_content 'Lamenting Robot'
       expect(page).to have_content 'start browsing'
+    end
+
+    it 'should display articles' do
+      create(:article, title: 'Test111', number: 1)
+      visit root_path
+      expect(page).to have_content 'Test111'
+    end
+
+    it 'should not display disabled articles' do
+      create(:article, title: 'Enabled', number: 1)
+      create(:article, title: 'Disabled', number: 2, enabled: false)
+      visit root_path
+      expect(page).to have_content 'Enabled'
+      expect(page).not_to have_content 'Disabled'
     end
   end
 
