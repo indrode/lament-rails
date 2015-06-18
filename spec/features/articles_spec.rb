@@ -35,4 +35,15 @@ RSpec.describe ArticlesController, type: :feature do
       expect(page).to have_content 'New Article'
     end
   end
+
+  describe 'Adding a new article' do
+    it 'should display validation messages' do
+      visit_with_basic_auth articles_path
+      click_link 'Add a new article'
+      click_button 'Create Article'
+      expect(page).to have_content 'New Article'
+      expect(page).to have_content 'Please review the problems below:'
+    end
+
+  end
 end

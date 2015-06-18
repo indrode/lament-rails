@@ -7,8 +7,9 @@ class Article < ActiveRecord::Base
   pg_search_scope :search, against: [:title, :blurb, :markdown]
 
   validates :number, :title, :blurb, :category, :posted_at, presence: true
-  validates :blurb, length: { maximum: 255 }
-  validates :number, numericality: true, uniqueness: true
+  validates :blurb, length: { maximum: 255 },  presence: true
+  validates :number, numericality: true, uniqueness: true,  presence: true
+  validates :category,  presence: true
 
   class << self
     def latest
