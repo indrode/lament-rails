@@ -12,6 +12,7 @@ gem 'puma'
 gem 'cssminify'
 gem 'turbolinks'
 gem 'newrelic_rpm'
+gem 'pg_search'
 
 group :development do
   gem 'mina'

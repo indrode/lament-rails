@@ -1,8 +1,10 @@
 class Article < ActiveRecord::Base
+  include PgSearch
   belongs_to :category, counter_cache: true
 
   scope :ordered, -> { order('number DESC') }
   scope :enabled, -> { where(enabled: true) }
+  pg_search_scope :search, against: [:title, :blurb, :markdown]
 
   validates :number, :title, :blurb, :category, :posted_at, presence: true
   validates :blurb, length: { maximum: 255 }
