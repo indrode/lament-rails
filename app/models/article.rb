@@ -26,7 +26,7 @@ class Article < ActiveRecord::Base
     "#{number}-#{title.parameterize}"
   end
 
-  def copy_copy # TODO: rename to copy and database field copy -> markdown
-    M.render(copy).html_safe
+  def copy
+    M.render(markdown).html_safe
   end
 end

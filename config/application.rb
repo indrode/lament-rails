@@ -37,6 +37,7 @@ module LamentRails
     config.assets.css_compressor = CSSminify.new
     config.generators do |g|
       g.assets false
+      g.helper false
     end
   end
 end

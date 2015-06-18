@@ -10,7 +10,7 @@
   <h2><%= @article.title %></h2>
   <p>Posted <time><%= @article.posted_at.strftime("%Y-%m-%d") %></time></p>
 </header>
-<%= @article.copy_copy %>
+<%= @article.copy %>
 </article>
 <% else %>
   <p>Your requested page was not found!<p>
