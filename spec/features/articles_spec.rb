@@ -44,6 +44,15 @@ RSpec.describe ArticlesController, type: :feature do
       expect(page).to have_content 'New Article'
       expect(page).to have_content 'Please review the problems below:'
     end
+  end
 
+  describe 'Editing an existing article' do
+    it 'should display validation messages' do
+      visit_with_basic_auth articles_path
+      click_link 'Article Title'
+      expect(page).to have_content 'Edit Article'
+      click_button 'Update Article'
+      expect(page).to have_content 'Article was successfully updated'
+    end
   end
 end
