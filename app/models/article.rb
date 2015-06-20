@@ -21,7 +21,7 @@ class Article < ActiveRecord::Base
     end
 
     def enabled_articles
-      enabled.ordered.reverse.each.to_a
+      enabled.ordered.reverse_each.to_a
     end
   end
 
