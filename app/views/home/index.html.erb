@@ -2,9 +2,9 @@
   <p><small><%= link_to('&larr; start browsing'.html_safe, blog_path(Article.latest)) %></small></p>
 <% end %>
 
-<p><small>Jump to
+<p><small>
 <% @categories.each do |category| %>
-  &rarr; <%= link_to category.title, anchor: category.title %>
+  <%= link_to category.title, root_path(anchor: category.title), class: 'tag' %>
 <% end %>
 </small></p>
 
