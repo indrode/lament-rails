@@ -12,7 +12,7 @@
         %p
           Posted
           %time= @article.posted_at.strftime("%Y-%m-%d")
-      = highlight(@article.copy, @query)
+      = @article.copy
   - else
     %p Your requested page was not found!
     %p
