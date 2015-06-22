@@ -13,11 +13,13 @@ gem 'cssminify'
 gem 'turbolinks'
 gem 'newrelic_rpm'
 gem 'pg_search'
+gem 'haml'
 
 group :development do
   gem 'mina'
   gem 'spring'
   gem 'quiet_assets'
+  gem 'erb2haml'
 end
 
 group :development, :test do

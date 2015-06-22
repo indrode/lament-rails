@@ -1,7 +1,0 @@
-<% content_for :navigation do %>
-  <p><small><%= link_to('&larr; start browsing'.html_safe, blog_path(Article.latest)) %></small> | <small><%= link_to('view all', root_path) %></small></p>
-<% end %>
-
-<table class="u-full-width">
-  <%= render partial: 'partials/category', locals: { category: @category } %>
-</table>

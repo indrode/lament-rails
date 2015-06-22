@@ -1,0 +1,15 @@
+%thead
+  %tr
+    %th
+      %a{:name => "#{category.title}"}= category.title.capitalize
+    %th= category.description
+%tbody
+  - category.articles.enabled.each do |article|
+    %tr
+      %td= article.posted_at.strftime("%Y-%m-%d")
+      %td
+        = link_to article.title, blog_path(article)
+        %br/
+        = article.blurb.html_safe
+  %tr
+    %td{:colspan => "2"}  

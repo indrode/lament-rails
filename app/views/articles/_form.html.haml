@@ -1,0 +1,18 @@
+= simple_form_for(@article, html: { multipart: true }) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :enabled, as: :select
+    .row
+      .six.columns
+        = f.input :number, input_html: { class: 'u-full-width' }
+      .six.columns
+        = f.association :category, input_html: { class: 'u-full-width' }
+    .row
+      .twelve.columns
+        = f.input :title, input_html: { class: 'u-full-width' }
+        = f.input :blurb, input_html: { class: 'u-full-width' }
+        = f.input :posted_at
+        = f.input :markdown, input_html: { class: 'u-full-width' }
+    .form-actions
+      = f.button :submit
+      = link_to 'Cancel', articles_path, class: 'button'

@@ -1,0 +1,18 @@
+%body
+  - content_for :navigation do
+    - if @article
+      %p
+        %small= link_to('&larr; previous article'.html_safe, blog_path(Article.previous(@article)))
+        |
+        %small= link_to('view all', root_path)
+  - if @article
+    %article
+      %header
+        %h2= @article.title
+        %p
+          Posted
+          %time= @article.posted_at.strftime("%Y-%m-%d")
+      = @article.copy
+  - else
+    %p Your requested page was not found!
+    %p

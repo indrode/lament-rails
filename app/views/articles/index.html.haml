@@ -1,0 +1,24 @@
+%body
+  - content_for :navigation do
+    = link_to 'Add a new article', new_article_path, class: 'button'
+    = link_to 'Back to homepage', root_path, class: 'button'
+  %header
+    %h2 Admin Interface
+  - if notice
+    %p#notice= notice
+  %table
+    %thead
+      %tr
+        %th Enabled
+        %th Number
+        %th Title
+        %th Category
+        %th Posted at
+    %tbody
+      - @articles.each do |article|
+        %tr
+          %td= article.enabled ? 'yes' : 'no'
+          %td= article.number
+          %td= link_to article.title, edit_article_path(article)
+          %td= article.category.title
+          %td= article.posted_at.strftime("%b %d, %Y")

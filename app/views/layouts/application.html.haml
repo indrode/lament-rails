@@ -1,0 +1,40 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %title Lamenting Robot
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = favicon_link_tag 'robot_avatar_small.png'
+    = csrf_meta_tags
+  %body
+    .container
+      .row
+        .one-third.column
+          %nav
+            %header
+              %h1
+                = link_to root_path do
+                  Lamenting
+                  %br/
+                  Robot
+              %p by Indro De
+            %p A collection of opinionated guides and articles of varying topics from a developer's perspective.
+            = yield :navigation
+           
+        .two-thirds.column
+          = yield
+          %footer
+            %p
+              %a{:href => "/"} Lamenting Robot
+              © #{Time.now.year} by
+              = succeed "." do
+                %a{:href => "http://indrode.com/"} Indro De
+            %p  
+            %p { this space intentionally left blank }
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Oxygen:300,400,700", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Jockey+One", :rel => "stylesheet", :type => "text/css"}/
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
