@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @categories = Category.includes(:articles).all
+    @recent = Category.recent
   end
 
   def show

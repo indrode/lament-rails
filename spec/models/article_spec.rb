@@ -32,6 +32,22 @@ RSpec.describe Article, type: :model do
         expect(Article.previous(first)).to eq(last)
       end
     end
+
+    describe '.recent' do
+      before do
+        10.times { |i| create(:article, number: i + 1) }
+      end
+
+      it 'returns the most recent 5 articles by default' do
+        expect(Article.recent.count).to eq(5)
+        expect(Article.recent.first).to eq(last)
+      end
+
+      it 'returns the given number of articles' do
+        expect(Article.recent(2).count).to eq(2)
+        expect(Article.recent.first).to eq(last)
+      end
+    end
   end
 
   describe '#to_param' do

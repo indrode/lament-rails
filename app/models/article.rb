@@ -23,6 +23,10 @@ class Article < ActiveRecord::Base
     def enabled_articles
       enabled.ordered.reverse_each.to_a
     end
+
+    def recent(limit = 5)
+      enabled.ordered.limit(limit)
+    end
   end
 
   def to_param
