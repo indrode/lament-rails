@@ -1,0 +1,18 @@
+- content_for :navigation do
+  %p
+    %small= link_to('view all', root_path)
+
+%table.u-full-width
+  %thead
+    %tr
+      %th{:colspan => "2"}
+        Search Results for:
+        = @query
+  %tbody
+    - @results.enabled.each do |article|
+      %tr
+        %td= article.posted_at.strftime("%Y-%m-%d")
+        %td
+          = link_to article.title, blog_path(article, highlight: @query)
+          %br/
+          = article.blurb.html_safe
