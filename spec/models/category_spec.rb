@@ -20,4 +20,11 @@ RSpec.describe Category, type: :model do
       end
     end
   end
+
+  describe 'instance methods' do
+    it 'displays the category name by default' do
+      category = create(:category, title: 'devops')
+      expect(category.to_s).to eq('devops')
+    end
+  end
 end

@@ -5,6 +5,6 @@
     %small= link_to('view all', root_path)
 %p.categories
   - @categories.each do |category|
-    = link_to_unless_current category.title, category_path(category.title), class: 'tag'
+    = link_to_unless_current category, category_path(category.title), class: 'tag'
 %table.u-full-width
   = render partial: 'partials/category', locals: { category: @category }

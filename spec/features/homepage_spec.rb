@@ -71,5 +71,13 @@ RSpec.describe HomeController, type: :feature do
       expect(page).to have_content 'previous article'
       expect(page).to have_content 'view all'
     end
+
+    it 'should display a link to the article\'s category' do
+      create(:article, number: 1, category: category)
+      visit blog_path(1)
+      expect(page).to have_content 'personal'
+      click_link('personal')
+      expect(current_path).to eq(category_path(category.title))
+    end
   end
 end
