@@ -29,7 +29,8 @@
           = yield
           %footer
             %p
-              %a{:href => "/"} Lamenting Robot
+              %a{:href => "/"}
+                = "Lamenting Robot v#{LamentRails::VERSION}"
               © #{Time.now.year} by
               = succeed "." do
                 %a{:href => "http://indrode.com/"} Indro De
