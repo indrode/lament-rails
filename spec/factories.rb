@@ -15,4 +15,14 @@ FactoryGirl.define do
     enabled true
     category
   end
+
+  factory :feature do
+    key "MyString"
+    enabled false
+  end
+
+  factory :setting do
+    key "MyString"
+    enabled false
+  end
 end
