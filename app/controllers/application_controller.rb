@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   def routing_error
     redirect_to controller: :home, action: :index, status: 302
   end
+
+  def server_error
+    redirect_to controller: :home, action: :index, status: 302
+  end
 end

@@ -3,10 +3,19 @@ require 'rails_helper'
 RSpec.describe HomeController, type: :feature do
   let!(:category) { create(:category, title: 'personal') }
 
-  describe 'Routing errors' do
-    it 'should redirect to the homepage' do
+  describe 'Errors' do
+    before do
       create(:article, number: 1)
+    end
+
+    it 'routing should redirect to the homepage' do
       visit '/routing/error'
+      expect(page.current_path).to eq(root_path)
+      expect(page).to have_content 'Lamenting Robot'
+    end
+
+    it 'server errors should redirect to the homepage' do
+      visit '/500'
       expect(page.current_path).to eq(root_path)
       expect(page).to have_content 'Lamenting Robot'
     end
