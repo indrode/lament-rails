@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :feature do
+  let!(:category) { create(:category, title: 'personal') }
+
   describe 'Homepage' do
     it 'should display correctly' do
       create(:article, number: 1)
@@ -21,6 +23,13 @@ RSpec.describe HomeController, type: :feature do
       visit root_path
       expect(page).to have_content 'Enabled'
       expect(page).not_to have_content 'Disabled'
+    end
+
+    it 'should display links to categories' do
+      create(:article)
+      visit root_path
+      click_link('personal')
+      expect(current_path).to eq(category_path(category.title))
     end
   end
 
