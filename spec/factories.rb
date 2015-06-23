@@ -17,12 +17,12 @@ FactoryGirl.define do
   end
 
   factory :feature do
-    key "MyString"
+    key 'a_feature_key'
     enabled false
   end
 
   factory :setting do
-    key "MyString"
-    enabled false
+    key 'a_setting_key'
+    value '1'
   end
 end
