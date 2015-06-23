@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def routing_error
-    # TODO: implement flash message
     redirect_to controller: :home, action: :index, status: 302
   end
-
 end
