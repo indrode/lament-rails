@@ -26,6 +26,11 @@ RSpec.describe Feature, type: :model do
         Feature.enable!(:search)
         expect(Feature.search_enabled?).to be_truthy
       end
+
+      it 'works with symbols or strings' do
+        Feature.enable! 'search'
+        expect(Feature.search_enabled?).to be_truthy
+      end
     end
 
     describe '.disable!' do
@@ -33,6 +38,11 @@ RSpec.describe Feature, type: :model do
         Feature.enable!(:search)
         expect(Feature.search_enabled?).to be_truthy
         Feature.disable!(:search)
+        expect(Feature.search_enabled?).to be_falsey
+      end
+
+      it 'works with symbols or strings' do
+        Feature.disable! 'search'
         expect(Feature.search_enabled?).to be_falsey
       end
     end
