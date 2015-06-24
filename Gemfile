@@ -14,9 +14,11 @@ gem 'turbolinks'
 gem 'newrelic_rpm'
 gem 'pg_search'
 gem 'haml'
+gem 'crono'
 
 group :development do
   gem 'mina'
+  gem 'mina-crono', path: '~/projects/mina-crono', require: false
   gem 'spring'
   gem 'quiet_assets'
   gem 'erb2haml'

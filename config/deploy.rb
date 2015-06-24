@@ -2,6 +2,7 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
+require 'mina/crono'
 
 set :domain, 'tetsuo'
 set :deploy_to, '/home/akira/lament-rails'
@@ -33,6 +34,7 @@ end
 desc 'Deploys the current version to the server.'
 task deploy: :environment do
   deploy do
+
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
@@ -42,8 +44,10 @@ task deploy: :environment do
 
     to :launch do
       # This kills the current Puma process, then restarts it
-      queue "kill $(cat #{deploy_to}/#{shared_path}/tmp/pids/puma.pid)"
-      queue "cd #{deploy_to}/#{current_path} && bundle exec puma -C config/puma.rb"
+      queue! "kill $(cat #{deploy_to}/#{shared_path}/tmp/pids/puma.pid)"
+      queue! "cd #{deploy_to}/#{current_path} && bundle exec puma -C config/puma.rb"
     end
+
+    invoke :'crono:restart'
   end
 end

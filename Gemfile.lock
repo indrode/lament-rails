@@ -1,3 +1,9 @@
+PATH
+  remote: ~/projects/mina-crono
+  specs:
+    mina-crono (0.1.0)
+      mina (~> 0)
+
 GIT
   remote: spacecake-git:/home/git/kotae.git
   revision: 1587aeb9c9e90105b75d74ab8b708809a237a107
@@ -78,6 +84,10 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
+    crono (0.8.9)
+      activejob (~> 4.0)
+      activerecord (~> 4.0)
+      activesupport (~> 4.0)
     cssminify (1.0.2)
     database_cleaner (1.4.1)
     debug_inspector (0.0.2)
@@ -229,6 +239,7 @@ DEPENDENCIES
   byebug
   capybara
   codeclimate-test-reporter
+  crono
   cssminify
   database_cleaner
   erb2haml
@@ -237,6 +248,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   kotae (= 0.2.8)!
   mina
+  mina-crono!
   newrelic_rpm
   pg
   pg_search
