@@ -7,10 +7,30 @@ RSpec.describe Feature, type: :model do
       Feature.reload_features!
     end
 
+    describe '.features' do
+      it 'returns all defined features' do
+        expect(Feature.features).to be_a(Hash)
+        expect(Feature.features).to eq({ search: false, authentication: true })
+      end
+    end
+
+    describe '.defined_features' do
+      it 'returns an array of defined feature keys' do
+        expect(Feature.defined_features).to eq(%w(search authentication))
+      end
+    end
+
     describe '.reload_features!' do
       it 'stores defined features' do
         expect(Feature.count).to eq(2)
         expect(Feature.last.key).to eq('authentication')
+      end
+    end
+
+    describe '.remove_old_features!' do
+      it 'destroys old features in database but not defined anymore' do
+        create(:feature)
+        expect { Feature.remove_old_features! }.to change{ Feature.count }.from(3).to(2)
       end
     end
 
