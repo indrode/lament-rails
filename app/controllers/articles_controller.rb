@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      invalidate_cache!
+      invalidate_caches!
       redirect_to articles_url, notice: 'Article was successfully created'
     else
       render :new
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      invalidate_cache!
+      invalidate_caches!
       redirect_to articles_url, notice: 'Article was successfully updated'
     else
       render :edit
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:enabled, :number, :title, :blurb, :category_id, :markdown, :posted_at)
   end
 
-  def invalidate_cache!
+  def invalidate_caches!
     expire_page controller: :home, action: 'index'
     expire_page controller: :home, action: 'show', number: @article.to_param
     expire_page controller: :categories, action: 'show', title: @article.category.title
