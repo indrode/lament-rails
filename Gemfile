@@ -31,6 +31,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'brakeman', require: false
   gem 'codeclimate-test-reporter', require: false
+  gem 'nyan-cat-formatter'
 end
 
 # gem 'sdoc', '~> 0.4.0', group: :doc
