@@ -4,6 +4,7 @@
     |
     %small= link_to('view all', root_path)
 %p.categories
+  = link_to 'all categories', root_path, class: 'tag'
   - @categories.each do |category|
     = link_to_unless_current category, category_path(category.title), class: 'tag'
 %table.u-full-width

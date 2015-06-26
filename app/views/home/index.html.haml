@@ -2,6 +2,7 @@
   %p
     %small= link_to('&larr; start browsing'.html_safe, blog_path(Article.latest))
 %p.categories
+  all categories
   - @categories.each do |category|
     = link_to category, category_path(category.title), class: 'tag'
 %table.u-full-width
