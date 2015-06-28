@@ -7,7 +7,7 @@ class Setting < ActiveRecord::Base
   class << self
     SETTINGS.each do |key, _|
       define_method(key.to_s) do
-        Setting.find_by_key(key).value
+        self.find_by_key(key).value
       end
     end
 
@@ -23,12 +23,12 @@ class Setting < ActiveRecord::Base
     end
 
     def remove_old_settings!
-      Setting.where(key: all_stored_settings - defined_settings).destroy_all
+      self.where(key: all_stored_settings - defined_settings).destroy_all
     end
 
     def set!(key = nil, value = nil, **hash)
       if settings.has_key?(hash.keys.first) || settings.has_key?(key.to_sym)
-        Setting.find_by_key(hash.keys.first || key.to_sym).update_attributes(value: hash.values.first || value)
+        self.find_by_key(hash.keys.first || key.to_sym).update_attributes(value: hash.values.first || value)
       end
     end
 
@@ -39,7 +39,7 @@ class Setting < ActiveRecord::Base
     private
 
     def all_stored_settings
-      Setting.all.pluck(:key)
+      self.all.pluck(:key)
     end
   end
 

@@ -6,7 +6,7 @@ class Feature < ActiveRecord::Base
   class << self
     FEATURES.each do |key, _|
       define_method("#{key}_enabled?") do
-        Feature.find_by_key(key).enabled
+        self.find_by_key(key).enabled
       end
     end
 
@@ -22,18 +22,18 @@ class Feature < ActiveRecord::Base
     end
 
     def remove_old_features!
-      Feature.where(key: all_stored_features - defined_features).destroy_all
+      self.where(key: all_stored_features - defined_features).destroy_all
     end
 
     def enable!(key)
       if features.has_key?(key.to_sym)
-        Feature.find_by_key(key).update_attributes(enabled: true)
+        self.find_by_key(key).update_attributes(enabled: true)
       end
     end
 
     def disable!(key)
       if features.has_key?(key.to_sym)
-        Feature.find_by_key(key).update_attributes(enabled: false)
+        self.find_by_key(key).update_attributes(enabled: false)
       end
     end
 
@@ -44,7 +44,7 @@ class Feature < ActiveRecord::Base
     private
 
     def all_stored_features
-      Feature.all.pluck(:key)
+      self.all.pluck(:key)
     end
   end
 
