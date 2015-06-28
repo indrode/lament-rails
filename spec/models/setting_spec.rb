@@ -57,5 +57,16 @@ RSpec.describe Setting, type: :model do
         expect(Setting.author).to eq('Erlich Bachman')
       end
     end
+
+    describe '.key_exists?(key, hash)' do
+      it 'returns the key' do
+        allow(Setting).to receive(:settings).and_return({ key1: '10', key2: '20' })
+        expect(Setting.key_exists?('key1')).to eq(:key1)
+      end
+      it 'returns the key if hash is passed' do
+        allow(Setting).to receive(:settings).and_return({ key1: '10', key2: '20' })
+        expect(Setting.key_exists?(nil, { key1: '10'})).to eq(:key1)
+      end
+    end
   end
 end
