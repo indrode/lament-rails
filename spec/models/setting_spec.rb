@@ -23,7 +23,7 @@ RSpec.describe Setting, type: :model do
     describe '.reload_settings!' do
       it 'stores defined settings' do
         expect(Setting.count).to eq(2)
-        expect(Setting.last.key).to eq('author')
+        expect(Setting.last.key).to eq('version')
       end
     end
 
