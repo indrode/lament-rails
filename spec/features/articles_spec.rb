@@ -58,7 +58,7 @@ RSpec.describe ArticlesController, type: :feature do
       fill_in('Blurb', with: 'Blurb')
       fill_in('Markdown', with: 'Markdown')
       click_button 'Create Article'
-      expect(page).to have_content 'Article was successfully created'
+      expect(page).to have_content 'The article was successfully created.'
     end
   end
 
@@ -78,7 +78,7 @@ RSpec.describe ArticlesController, type: :feature do
       click_link 'Article Title'
       expect(page).to have_content 'Edit Article'
       click_button 'Update Article'
-      expect(page).to have_content 'Article was successfully updated'
+      expect(page).to have_content 'The article was successfully updated.'
     end
   end
 end

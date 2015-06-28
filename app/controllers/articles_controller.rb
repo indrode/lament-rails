@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       invalidate_caches!
-      redirect_to articles_url, notice: 'Article was successfully created'
+      redirect_to articles_path, notice: 'The article was successfully created.'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   def update
     if @article.update(article_params)
       invalidate_caches!
-      redirect_to articles_url, notice: 'Article was successfully updated'
+      redirect_to articles_path, notice: 'The article was successfully updated.'
     else
       render :edit
     end
