@@ -11,7 +11,7 @@
   %tbody
     - @results.enabled.each do |article|
       %tr
-        %td= article.posted_at.strftime("%Y-%m-%d")
+        %td= friendly_date(article.posted_at)
         %td
           = link_to article.title, blog_path(article, highlight: @query)
           %br/

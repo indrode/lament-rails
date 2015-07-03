@@ -10,8 +10,8 @@
       %header
         %h2= @article.title
         %p
-          Posted
-          %time= @article.posted_at.strftime("%Y-%m-%d")
+          Posted on
+          %time= friendly_date(@article.posted_at)
           in
           = link_to @article.category, category_path(@article.category.title), class: 'tag'
       = @article.copy

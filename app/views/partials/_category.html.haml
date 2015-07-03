@@ -1,12 +1,12 @@
 %thead
   %tr
-    %th
+    %th.category
       %a{:name => "#{category.title}"}= category.title.capitalize
     %th= category.description
 %tbody
   - category.articles.enabled.each do |article|
     %tr
-      %td= article.posted_at.strftime("%Y-%m-%d")
+      %td= friendly_date(article.posted_at)
       %td
         = link_to article.title, blog_path(article)
         %br/

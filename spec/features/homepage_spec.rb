@@ -62,7 +62,7 @@ RSpec.describe HomeController, type: :feature do
       visit blog_path(1)
       expect(page).to have_content 'Article Title'
       expect(page).to have_content 'This is the main article copy.'
-      expect(page).to have_content '2015-04-20'
+      expect(page).to have_content 'Apr 20, 2015'
     end
 
     it 'should display navigation link on homepage' do
