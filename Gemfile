@@ -20,6 +20,7 @@ group :development do
   gem 'spring'
   gem 'quiet_assets'
   gem 'erb2haml'
+  gem 'bullet'
 end
 
 group :development, :test do
