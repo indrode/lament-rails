@@ -21,6 +21,7 @@ group :development do
   gem 'quiet_assets'
   gem 'erb2haml'
   gem 'bullet'
+  gem 'reek'
 end
 
 group :development, :test do
