@@ -1,6 +1,6 @@
 # Lamenting Robot
 
-[![Code Climate](https://codeclimate.com/github/indrode/lament-rails/badges/gpa.svg)](https://codeclimate.com/github/indrode/lament-rails) [![Test Coverage](https://codeclimate.com/github/indrode/lament-rails/badges/coverage.svg)](https://codeclimate.com/github/indrode/lament-rails/coverage)
+[![Code Climate](https://codeclimate.com/github/indrode/lament-rails/badges/gpa.svg)](https://codeclimate.com/github/indrode/lament-rails) [![Test Coverage](https://codeclimate.com/github/indrode/lament-rails/badges/coverage.svg)](https://codeclimate.com/github/indrode/lament-rails/coverage) [![security](https://hakiri.io/github/indrode/lament-rails/master.svg)](https://hakiri.io/github/indrode/lament-rails/master)
 
 ## Deployment
 
