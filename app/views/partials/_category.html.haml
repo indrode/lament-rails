@@ -8,7 +8,7 @@
     %tr
       %td= friendly_date(article.posted_at)
       %td
-        = link_to article.title, blog_path(article)
+        = link_to article.title, blog_path(article.permalink)
         %br/
         = h article.blurb.html_safe
   %tr

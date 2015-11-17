@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'newrelic_rpm'
 gem 'pg_search'
 gem 'haml'
+gem 'administrate'
 
 group :development do
   gem 'mina'

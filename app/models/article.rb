@@ -15,11 +15,11 @@ class Article < ActiveRecord::Base
 
   class << self
     def latest
-      enabled.ordered.first
+      enabled.ordered.first.permalink
     end
 
     def previous(article)
-      enabled_articles[enabled_articles.index(article) - 1]
+      enabled_articles[enabled_articles.index(article) - 1].permalink
     end
 
     def enabled_articles
@@ -31,10 +31,9 @@ class Article < ActiveRecord::Base
     end
   end
 
-  def to_param
-    permalink
-    # "#{number}-#{title.parameterize}"
-  end
+  # def to_param
+  #   permalink
+  # end
 
   def copy
     M.render(markdown).html_safe
