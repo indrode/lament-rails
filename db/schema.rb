@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624192000) do
+ActiveRecord::Schema.define(version: 20151117015209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150624192000) do
     t.datetime "updated_at",  null: false
     t.boolean  "enabled"
     t.integer  "category_id"
+    t.string   "permalink"
   end
 
   add_index "articles", ["category_id"], name: "index_articles_on_category_id", using: :btree
@@ -45,6 +46,23 @@ ActiveRecord::Schema.define(version: 20150624192000) do
     t.boolean  "enabled",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "fs_features", force: :cascade do |t|
+    t.string   "key"
+    t.boolean  "enabled",    default: false
+    t.string   "klass"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "fs_settings", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.string   "value_type"
+    t.string   "klass"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "settings", force: :cascade do |t|

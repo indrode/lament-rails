@@ -6,6 +6,7 @@ FactoryGirl.define do
 
   factory :article do
     sequence(:number) { |n| n }
+    sequence(:permalink) { |n| "permalink#{n}" }
     title 'Article Title'
     blurb 'This is a test article blurb.'
     markdown 'This is the main article copy.'
