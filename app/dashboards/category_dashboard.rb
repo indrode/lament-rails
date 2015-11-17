@@ -39,7 +39,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :articles,
     :title,
-    :articles_count,
     :description,
   ]
 
