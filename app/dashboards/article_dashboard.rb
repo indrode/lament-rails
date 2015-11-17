@@ -8,12 +8,11 @@ class ArticleDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    category: Field::String,
     id: Field::Number,
     number: Field::Number,
     title: Field::String,
     blurb: Field::String,
-    category: Field::String,
+    category: Field::BelongsTo,
     markdown: Field::Text,
     posted_at: Field::DateTime,
     created_at: Field::DateTime,
@@ -43,21 +42,20 @@ class ArticleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :category,
+    :enabled,
     :number,
+    :category,
+    :permalink,
     :title,
     :blurb,
-    :category,
     :markdown,
     :posted_at,
-    :enabled,
-    :permalink,
   ]
 
   # Overwrite this method to customize how articles are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(article)
-  #   "Article ##{article.id}"
-  # end
+  def display_resource(article)
+    "Article '#{article.permalink}'"
+  end
 end
