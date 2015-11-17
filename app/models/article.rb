@@ -6,10 +6,12 @@ class Article < ActiveRecord::Base
   scope :enabled, -> { where(enabled: true) }
   pg_search_scope :search, against: [:title, :blurb, :markdown]
 
-  validates :number, :title, :blurb, :category, :posted_at, presence: true
+  validates :number, :permalink, :title, :blurb, :category, :posted_at, presence: true
   validates :blurb, length: { maximum: 255 },  presence: true
   validates :number, numericality: true, uniqueness: true,  presence: true
   validates :category,  presence: true
+  validates :number, uniqueness: true
+  validates :permalink, uniqueness: true
 
   class << self
     def latest
@@ -30,7 +32,8 @@ class Article < ActiveRecord::Base
   end
 
   def to_param
-    "#{number}-#{title.parameterize}"
+    permalink
+    # "#{number}-#{title.parameterize}"
   end
 
   def copy

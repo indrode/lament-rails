@@ -1,7 +1,11 @@
 = simple_form_for(@article, html: { multipart: true }) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :enabled, as: :select
+    .row
+      .six.columns
+        = f.input :enabled, as: :select
+      .six.columns
+        = f.input :permalink
     .row
       .six.columns
         = f.input :number, input_html: { class: 'u-full-width' }

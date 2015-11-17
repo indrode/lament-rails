@@ -9,7 +9,7 @@ end
 
 RSpec.describe ArticlesController, type: :feature do
   before do
-    create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
+    create(:article, number: 1, posted_at: Date.new(2015, 4, 20), permalink: 'a1')
     create(:category, title: 'CategoryA')
   end
 

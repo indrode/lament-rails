@@ -58,23 +58,23 @@ RSpec.describe HomeController, type: :feature do
     end
 
     it 'should render an article page' do
-      create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
-      visit blog_path(1)
+      create(:article, number: 1, posted_at: Date.new(2015, 4, 20), permalink: 'a1')
+      visit blog_path('a1')
       expect(page).to have_content 'Article Title'
       expect(page).to have_content 'This is the main article copy.'
       expect(page).to have_content 'Apr 20, 2015'
     end
 
     it 'should display navigation link on homepage' do
-      create(:article, number: 1, posted_at: Date.new(2015, 4, 20))
-      visit blog_path(1)
+      create(:article, number: 1, posted_at: Date.new(2015, 4, 20), permalink: 'a1')
+      visit blog_path('a1')
       expect(page).to have_content 'previous article'
       expect(page).to have_content 'view all'
     end
 
     it 'should display a link to the article\'s category' do
-      create(:article, number: 1, category: category)
-      visit blog_path(1)
+      create(:article, number: 1, category: category, permalink: 'a1')
+      visit blog_path('a1')
       expect(page).to have_content 'personal'
       click_link('personal')
       expect(current_path).to eq(category_path(category.title))

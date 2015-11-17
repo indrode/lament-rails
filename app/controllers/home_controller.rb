@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    @article = Article.find_by_number(params[:number])
+    @article = Article.find_by_permalink(params[:permalink])
   end
 
   # def results

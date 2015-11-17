@@ -51,8 +51,8 @@ RSpec.describe Article, type: :model do
   end
 
   describe '#to_param' do
-    it 'returns a parameterized version' do
-      expect(first.to_param).to eq('20-article-title')
+    it 'returns the permalink' do
+      expect(first.to_param).to eq("#{first.permalink}")
     end
   end
 end
