@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails'
 gem 'actionpack-page_caching'
 gem 'pg'
@@ -17,7 +16,6 @@ gem 'haml'
 gem 'administrate'
 
 group :development do
-  gem 'kotae', '0.2.8', git: 'spacecake:/home/git/kotae.git', ref: 'lament'
   gem 'mina'
   gem 'spring'
   gem 'quiet_assets'
@@ -27,7 +25,7 @@ group :development do
   gem 'capistrano', '~> 3.1'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'capistrano-rbenv'
+  gem 'capistrano-chruby'
   gem 'capistrano3-puma'
 end
 
