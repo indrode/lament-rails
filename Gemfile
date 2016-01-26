@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'kotae', '0.2.8', git: 'spacecake-git:/home/git/kotae.git', ref: 'lament'
+
 gem 'rails'
 gem 'actionpack-page_caching'
 gem 'pg'
@@ -17,6 +17,7 @@ gem 'haml'
 gem 'administrate'
 
 group :development do
+  gem 'kotae', '0.2.8', git: 'spacecake:/home/git/kotae.git', ref: 'lament'
   gem 'mina'
   gem 'spring'
   gem 'quiet_assets'
