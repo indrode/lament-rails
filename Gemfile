@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'kotae', '0.2.8', git: '/home/git/kotae.git', ref: 'lament'
+gem 'kotae', '0.2.8', git: 'spacecake-git:/home/git/kotae.git', ref: 'lament'
 gem 'rails'
 gem 'actionpack-page_caching'
 gem 'pg'
