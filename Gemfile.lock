@@ -1,5 +1,5 @@
 GIT
-  remote: spacecake-git:/home/git/kotae.git
+  remote: /home/git/kotae.git
   revision: 1587aeb9c9e90105b75d74ab8b708809a237a107
   ref: lament
   specs:
