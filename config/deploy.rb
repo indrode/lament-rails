@@ -1,49 +1,48 @@
-require 'mina/bundler'
-require 'mina/rails'
-require 'mina/git'
-require 'mina/rbenv'
+# config valid only for current version of Capistrano
+lock '3.4.0'
 
-set :domain, 'tetsuo'
+set :application, 'lament-rails'
+set :repo_url, 'git@github.com:indrode/lament-rails.git'
+
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+
+# Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/akira/lament-rails'
-set :repository, 'git@github.com:indrode/lament-rails.git'
-set :branch, 'master'
 
-# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
-# They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'log', 'tmp/sockets', 'tmp/pids']
+# Default value for :scm is :git
+# set :scm, :git
 
-task :environment do
-  invoke :'rbenv:load'
-end
+# Default value for :format is :pretty
+# set :format, :pretty
 
-# Put any custom mkdir's in here for when `mina setup` is ran.
-# For Rails apps, we'll make some of the shared paths that are shared between
-# all releases.
-task setup: :environment do
-  queue! %(mkdir -p "#{deploy_to}/#{shared_path}/log")
-  queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/log")
+# Default value for :log_level is :debug
+# set :log_level, :debug
 
-  queue! %(mkdir -p "#{deploy_to}/#{shared_path}/config")
-  queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/config")
+# Default value for :pty is false
+# set :pty, true
 
-  queue! %(touch "#{deploy_to}/#{shared_path}/config/database.yml")
-  queue %(echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'.")
-end
+# Default value for :linked_files is []
+# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
-desc 'Deploys the current version to the server.'
-task deploy: :environment do
-  deploy do
-    invoke :'git:clone'
-    invoke :'deploy:link_shared_paths'
-    invoke :'bundle:install'
-    invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
-    invoke :'deploy:cleanup'
+# Default value for linked_dirs is []
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
-    to :launch do
-      # This kills the current Puma process, then restarts it
-      queue "kill $(cat #{deploy_to}/#{shared_path}/tmp/pids/puma.pid)"
-      queue "cd #{deploy_to}/#{current_path} && bundle exec puma -C config/puma.rb"
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5
+
+namespace :deploy do
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
     end
   end
+
 end
